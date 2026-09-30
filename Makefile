@@ -15,5 +15,10 @@ all: stream
 stream: stream.c
 	$(CC) $(CFLAGS) $(DEFINES) stream.c -o stream
 
+run: stream
+	@mkdir -p results
+	@echo "Running benchmark and saving output..."
+	./stream | tee results/stream_run_$$(date +%Y-%m-%d_%H-%M-%S).txt
+
 clean:
 	rm -f stream
