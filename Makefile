@@ -2,9 +2,9 @@ CC = gcc
 CFLAGS = -O3 -fopenmp -Wall
 
 # For STREAM, the arrays must be significantly larger than the Last Level Cache (LLC).
-# 100,000,000 elements = ~2.2 GB of total memory used.
+# 1,000,000,000 elements = ~22.4 GB of total memory used (3 arrays x 8 bytes).
 # If you run out of memory, lower this number. If you have huge cache, increase it.
-DEFINES = -DSTREAM_ARRAY_SIZE=100000000
+DEFINES = -DSTREAM_ARRAY_SIZE=1000000000
 
 # Optional: To use NVIDIA HPC SDK (nvc) instead of gcc, uncomment this:
 # CC = nvc
